@@ -152,10 +152,10 @@ hr{
     display: flex;
     
 }
-.travel{
+.travel {
     /* border-left: 2px solid #a6c5eb; */
-    /* height: 30px; */
-    background-color: #e1ecf4; 
+    height: 47px;
+    background-color: #e1ecf4;
 }
 .clear{
     clear: both;
