@@ -95,32 +95,23 @@ for(i=0;i<s;i++)
     // console.log(diff +"difference");
     if(diff<0)
     {
-        c++;
-        console.log("sucess");
-        $(".body").append(`
-        <div class="head flex">
-          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i].duration}px; style="width:38%";top: ${data[i].start}px";>${data[i].title} </div>
-          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i++].duration}px; style="width:40%"; top: ${data[i++].start}px";>${data[i++].title} </div>
+    //     $(".body").append(`
+    //     // <div class="head flex">
+    //     //   <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i].duration}px; style="width:38%";top: ${data[i].start}px";>${data[i].title} </div>
+    //     //   <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i++].duration}px; style="width:40%"; top: ${data[i++].start}px";>${data[i++].title} </div>
           
-          </div>  
-    `)
-        
-    }
-    else{
-        console.log("fail");
-        $(".body").append(`
-        <div class="head flex ">
-          <div class="small-font excercise bgcolor border-left" style="height:${data[i].duration}px";top: ${data[i].start}px";>${data[i].title}</div>
-        </div>   
-    `)
-    }
-    // $(".body").append(`
-    //     <div class="head flex width-80">
-    //       <div class="small-font opacity">${array[i]}</div>
-    //       <div class="small-font excercise bgcolor width-90 border-left">${data[i].title}</div>
-    //     </div>
-        
+    //     //   </div>  
     // `)
+    $(".body").append(
+        `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;">${data[i].title}</div>`
+    )
+    }else{
+          $(".body").append(`
+          <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;">${data[i].title}</div>
+        
+    `)
+    }
+  
     
 }
   
