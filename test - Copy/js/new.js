@@ -99,18 +99,18 @@ for(i=0;i<s;i++)
         console.log("sucess");
         $(".body").append(`
         <div class="head flex">
-          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i].duration}px; style="width:38%";>${data[i].title} </div>
-          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i++].duration}px; style="width:40%"; style="margin-top:5px";>${data[i++].title} </div>
+          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i].duration}px; style="width:38%";top: ${data[i].start}px";>${data[i].title} </div>
+          <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i++].duration}px; style="width:40%"; top: ${data[i++].start}px";>${data[i++].title} </div>
           
           </div>  
     `)
-        i--;
+        
     }
     else{
         console.log("fail");
         $(".body").append(`
         <div class="head flex ">
-          <div class="small-font excercise bgcolor border-left" style="height:${data[i].duration}px";>${data[i].title}</div>
+          <div class="small-font excercise bgcolor border-left" style="height:${data[i].duration}px";top: ${data[i].start}px";>${data[i].title}</div>
         </div>   
     `)
     }
