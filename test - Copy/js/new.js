@@ -78,21 +78,34 @@ function getTimeArray() {
     var s=data.length;
     console.log(s+"length");
     for(i=0;i<array.length;i++)
-    {
-        $(".time").append(`
+    {   
+        if(i%2==1)
+        {
+            $(".time").append(`
         <div class="head flex">
-            <div class="small-font opacity height ">${array[i]}</div>   
+            <div class="small-font opacity height border-bottom">${array[i]}</div>   
         </div>
         `)
-    }
+        }
+        else{
+            $(".time").append(`
+            <div class="head flex">
+                <div class="small-font opacity height">${array[i]}</div>   
+            </div>
+            `)
+        }
 
+        
+    }
+    var y = [];
 for(i=0;i<s;i++)
 {
-    var c=0;
+
     // var x=data[i+1].start+data[i+1].duration;
     // var y=data[i].start;
     diff=data[i+1].start-(data[i].start+data[i].duration);
-    // console.log(diff +"difference");
+    y[i]=diff;
+    console.log(y +"difference");
     if(diff<0)
     {
     
