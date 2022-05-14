@@ -34,7 +34,7 @@ var data = [{
     start: 400,
     duration: 30,
     title: "Push up branch"
-}];
+},{}];
 
 
 // for (var j in data) {
@@ -95,24 +95,17 @@ for(i=0;i<s;i++)
     // console.log(diff +"difference");
     if(diff<0)
     {
-    //     $(".body").append(`
-    //     // <div class="head flex">
-    //     //   <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i].duration}px; style="width:38%";top: ${data[i].start}px";>${data[i].title} </div>
-    //     //   <div class="small-font excercise  border-bottom bgcolor border-left style="height:${data[i++].duration}px; style="width:40%"; top: ${data[i++].start}px";>${data[i++].title} </div>
-          
-    //     //   </div>  
-    // `)
-    $(".body").append(
-        `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;">${data[i].title}</div>`
-    )
-    }else{
-          $(".body").append(`
-          <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;">${data[i].title}</div>
-        
-    `)
-    }
-  
     
+    $(".body").append(
+        `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;margin-left:50%;
+         z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
+    )
+    }
+    else{
+          $(".body").append(`
+          <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;height:${data[i].duration}px;">${data[i].title}</div>  
+    `)
+    }   
 }
   
  
