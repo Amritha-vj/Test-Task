@@ -85,6 +85,7 @@ for(let i=0;i<s;i++)
     }
     else
     {
+        y[i]=0;
         y[i]=data[i].start-(data[i-1].start+data[i-1].duration);
         y[i+1]=data[i+1].start-(data[i].start+data[i].duration);
     }
