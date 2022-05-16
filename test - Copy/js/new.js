@@ -34,7 +34,7 @@ var data = [{
     start: 400,
     duration: 30,
     title: "Push up branch"
-},{}];
+}];
 
 
 // for (var j in data) {
@@ -82,10 +82,11 @@ function getTimeArray() {
         if(i%2==1)
         {
             $(".time").append(`
-        <div class="head flex">
-            <div class="small-font opacity height border-bottom">${array[i]}</div>   
-        </div>
-        `)
+            <div class="head flex">
+                <div class="small-font opacity height border-bottom">${array[i]}</div>   
+            </div>
+            `)
+
         }
         else{
             $(".time").append(`
@@ -98,17 +99,21 @@ function getTimeArray() {
         
     }
     var y = [];
-for(i=0;i<s;i++)
+for(let i=0;i<=s;i++)
 {
 
     // var x=data[i+1].start+data[i+1].duration;
     // var y=data[i].start;
+  
     diff=data[i+1].start-(data[i].start+data[i].duration);
     y[i]=diff;
     console.log(y +"difference");
     if(diff<0)
     {
-    
+        if(y[i]<0 && y[i+1]<0)
+        {
+            console.log("overlapped");
+        }
     $(".body").append(
         `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;margin-left:50%;
          z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
@@ -116,7 +121,7 @@ for(i=0;i<s;i++)
     }
     else{
           $(".body").append(`
-          <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;height:${data[i].duration}px;">${data[i].title}</div>  
+          <div class="small-font position-absolute w-100 bgcolor border-bottom" style="top:${data[i].start}px;height:${data[i].duration}px;">${data[i].title}</div>  
     `)
     }   
 }
