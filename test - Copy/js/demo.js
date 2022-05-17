@@ -1,35 +1,36 @@
 var data = [{
-    start: 0,
+    start: 10,
     duration: 15,
     title: "Exercise"
-}, {
-    start: 30,
-    duration: 30,
-    title: "Plan day"
 }, {
     start: 25,
     duration: 30,
     title: "Travel to work"
+}, {
+    start: 30,
+    duration: 30,
+    title: "Plan day"
 }, {
     start: 60,
     duration: 15,
     title: "Review yesterday's commits"
 }, {
     start: 100,
+
     duration: 15,
     title: "Code review"
 }, {
     start: 180,
     duration: 90,
     title: "Have lunch with John"
-}, {
-    start: 370,
-    duration: 45,
-    title: "Follow up with designer"
-}, {
+},  {
     start: 360,
     duration: 30,
     title: "Skype call"
+},{
+    start: 370,
+    duration: 45,
+    title: "Follow up with designer"
 },{
     start: 400,
     duration: 30,
@@ -98,37 +99,47 @@ for(let i=0;i<s;i++)
     else
     {
         y[i]=data[i].start-(data[i-1].start+data[i-1].duration);
-        y[i+1]=data[i+1].start-(data[i].start+data[i].duration);     
+        y[i+1]=data[i+1].start-(data[i].start+data[i].duration);   
     }
-    // if(z)
-    // {
-    //     $(".body").append(
-    //         `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;margin-left:50%;
-    //         z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
-    //     )
 
-    // }
-
-    if(y[i]<0||i==data.length-2)
+    if(y[i]<0 )
     {
+        if((y[i]<0 && y[i+1]<0))
+        {
+        if(data[i].duration>data[i-1].duration)
+        {
+            $(".body").append(
+                `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;
+                z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
+            )  
+            $(".body").append(
+                `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i+1].start}px;
+                z-index:1;height:${data[i+1].duration}px;margin-left:50%; ">${data[i+1].title}</div>`
+            )    
+            
+        }
+    }
+    else{
         $(".body").append(
-            `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;margin-left:50%;
+            `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;
             z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
         )
+    }   
     }
     else if(y[i]>0 && y[i+1]<0)
     {
         $(".body").append(
             `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;
-            z-index:1;height:${data[i].duration}px;">${data[i].title}</div>`
+            z-index:1;height:${data[i].duration}px;margin-left:50%;">${data[i].title}</div>`
         )   
     }
+   
     else{
           $(".body").append(`
              <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;height:${data[i].duration}px;">${data[i].title}</div>  
           `)
     }   
-    console.log(y[i]+"elemets");
+ 
 }
 
   
