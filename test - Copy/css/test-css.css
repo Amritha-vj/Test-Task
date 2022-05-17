@@ -6,15 +6,19 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .time{
-    width: 2%;
+    width: 88%;
     float: left;
+    position:absolute;
+    z-index:1;
 }
 .body{
     width: 98%;
     float: left;
+    margin-left:3%;
 }
 
 .bgcolor{
@@ -32,7 +36,14 @@ body{
 .small-font{
     font-size: 10px; 
 }
+.small-font2{
+    font-size: 12px; 
+}
 
 .clear{
     clear: both;
+}
+.border1
+{
+    border-top:1px solid rgb(206, 202, 202);
 }
