@@ -23,13 +23,13 @@ var data = [{
     duration: 90,
     title: "Have lunch with John"
 }, {
-    start: 370,
-    duration: 45,
-    title: "Follow up with designer"
-}, {
     start: 360,
     duration: 30,
     title: "Skype call"
+}, {
+    start: 370,
+    duration: 45,
+    title: "Follow up with designer"
 },{
     start: 400,
     duration: 30,
@@ -109,7 +109,8 @@ for(let i=0;i<s;i++)
 
     // }
 
-    if(y[i]<0||i==data.length-2)
+    // if(y[i]<0||i==data.length-2)
+    if(y[i]<0 )
     {
         $(".body").append(
             `<div class="bgcolor small-font position-absolute w-50" style="top:${data[i].start}px;margin-left:50%;
@@ -128,7 +129,7 @@ for(let i=0;i<s;i++)
              <div class="small-font position-absolute w-100 bgcolor" style="top:${data[i].start}px;height:${data[i].duration}px;">${data[i].title}</div>  
           `)
     }   
-    console.log(y[i]+"elemets");
+    
 }
 
   

@@ -1,5 +1,5 @@
 var data = [{
-    start: 10,
+    start: 0,
     duration: 15,
     title: "Exercise"
 }, {
